@@ -16,4 +16,9 @@ router.get('/', function(req, res, next) {
   });
 });
 
+router.post('/en_el_body', (req, res, next) => {
+  console.log(req.body);
+  res.send('ok');
+});
+
 module.exports = router;
