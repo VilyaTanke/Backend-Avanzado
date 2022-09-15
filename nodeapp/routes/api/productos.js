@@ -8,10 +8,37 @@ const Producto = require('../../models/Producto');
 router.get('/', async (req, res, next) => {
 
     try {
-        const productos = await Producto.find();
+
+        // filtros
+        const name = req.query.name;
+        const tags = req.query.tags;
+
+
+        // paginación
+        const skip = req.query.skip;
+        const limit = req.query.limit;
+
+        // selección de campos
+        const fields = req.query.fields;
+        const sort = req.query.sort;
+
+
+        // creamos el filtro vacio
+        const filtro = {}
+
+        if (name) {
+            filtro.name = name;
+        }
+
+        if (tags) {
+            filtro.tags = tags;
+        }
+
+
+        const productos = await Producto.lista(filtro, skip, limit, fields, sort);
 
         res.json({ result: productos });
-    } catch (error) {
+    } catch (err) {
         next(err);
     }
 

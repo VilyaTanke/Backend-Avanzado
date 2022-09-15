@@ -37,12 +37,20 @@ app.use(function(req, res, next) {
 
 // error handler
 app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
+  
+  if (err.array) {
+    err.status = 422;
+    const errorInfo = err.array({ onlyFirstError: true}) [0];
+    console.log(errorInfo);
+    err.message = `Error in ${errorInfo.location}, param "${errorInfo.param}" ${error.info.msg}`;
+  }
+
+  res.status(err.status || 500);
+
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
   // render the error page
-  res.status(err.status || 500);
   res.render('error');
 });
 
