@@ -4,8 +4,9 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+const basicAuth = require ('./lib/basicAuth')
+
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
 
 const mongoose = require('./lib/connectMongoose.js');
 
@@ -25,10 +26,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 /**
  * Ruta de la api
  */
-app.use('/api/productos', require('./routes/api/productos'));
+app.use('/api/productos', basicAuth,require('./routes/api/productos'));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
