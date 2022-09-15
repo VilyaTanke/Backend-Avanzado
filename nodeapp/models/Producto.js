@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 const productoSchema = mongoose.Schema({
     name: String,
     venta: Boolean,
-    Precio: { type: Number, min: 0, max: 1000000},
+    precio: { type: Number, min: 0, max: 1000000},
     foto: String,
     tags: [String]
 });
