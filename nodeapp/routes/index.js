@@ -1,24 +1,64 @@
 var express = require('express');
 var router = express.Router();
 const {query, validationResult } = require('express-validator');
+const Producto = require('../models/Producto');
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  const ahora = new Date();
 
-  res.locals.bienvenido = 'Bienvenido a Nodepop';
 
-  res.render('index', { 
-    title: 'Nodepop',
-    diaActual: ahora.getDate(),
-    mesActual: ahora.getMonth(),
-    annoActual: ahora.getFullYear()
-  });
+router.get('/', async (req, res, next) => {
+
+  try {
+
+
+      // filtros
+      const name = req.query.name;
+      const tags = req.query.tags;
+      const venta = req.query.venta;
+
+
+      // paginación
+      const skip = req.query.skip;
+      const limit = req.query.limit;
+
+      // selección de campos
+      const fields = req.query.fields;
+      const sort = req.query.sort;
+
+
+      // creamos el filtro vacio
+      const filtro = {}
+
+      if (name) {
+        filtro.name = name;
+      }
+
+      if (tags) {
+        filtro.tags = tags;
+      }
+
+      if (venta) {
+        filtro.venta = venta;
+      }
+
+
+      const productos = await Producto.lista(filtro, skip, limit, fields, sort);
+
+      res.locals.bienvenido = 'Bienvenido a Nodepop';
+      const ahora = new Date();
+      res.render('index', { 
+        title: 'Nodepop',
+        diaActual: ahora.getDate(),
+        mesActual: ahora.getMonth(),
+        annoActual: ahora.getFullYear(),
+        productos: productos
+      })
+
+  } catch (err) {
+      next(err);
+  }
+
 });
 
-router.post('/en_el_body', (req, res, next) => {
-  console.log(req.body);
-  res.send('ok');
-});
-
+ 
 module.exports = router;

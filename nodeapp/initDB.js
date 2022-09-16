@@ -29,10 +29,10 @@ async function initProductos() {
 
     // Productos para la base de datos inicial
     const inserted = await Producto.insertMany([
-        { name: 'Bicicleta', venta: true, precio: 230.15, foto: 'BicicletaElectrica.jpg',  tags: ['lifestyle', 'motor']},
-        { name: 'iphone 12 pro max', venta: false, precio: 800, foto: 'iphone12pm.jpg', tags: ['lifestyle', 'mobile'] },
-        { name: 'Asus Rog Strix', venta: true, precio: 950, foto: 'Asus.jpg', tags: ['work', 'lifestyle', 'mobile'] },
-        { name: 'patinete XIAOMI', venta: true, precio: 300, foto: 'MiScooter.jpg', tags: ['lifestyle', 'motor'] }
+        { name: 'Bicicleta', venta: true, precio: 230.15, foto: './images/BicicletaElectrica.jpg',  tags: ['lifestyle', 'motor']},
+        { name: 'iphone 12 pro max', venta: false, precio: 800, foto: './images/iphone12.jpg', tags: ['lifestyle', 'mobile'] },
+        { name: 'Asus Rog Strix', venta: true, precio: 950, foto: './images/AsusROG.jpg', tags: ['work', 'lifestyle', 'mobile'] },
+        { name: 'patinete XIAOMI', venta: true, precio: 300, foto: './images/Patinetexiaomi.jpg', tags: ['lifestyle', 'motor'] }
     ]);
     console.log(`Creados ${inserted.length} Pproductos para nuestra base de datos`);
 }

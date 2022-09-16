@@ -12,6 +12,7 @@ router.get('/', async (req, res, next) => {
         // filtros
         const name = req.query.name;
         const tags = req.query.tags;
+        const venta = req.query.venta;
 
 
         // paginación
@@ -75,5 +76,22 @@ router.get ('/:_id', async (req, res, next) => {
       next(error);
     }
 });
+
+// para crear un producto nuevo
+router.post ('/', async (req, res, next) => {
+    try {
+        const productoData = req.body;
+
+        const producto = new Producto(productoData);
+
+        const productoGuardado = await producto.save();
+
+        res.json({ result: productoGuardado });
+
+        console.log(`Se ha creado un nuevo producto con exito`);
+    } catch (error) {
+        next(error);
+    }
+})
 
 module.exports = router;
