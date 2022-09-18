@@ -13,6 +13,7 @@ router.get('/', async (req, res, next) => {
         const name = req.query.name;
         const tags = req.query.tags;
         const venta = req.query.venta;
+        const _id = req.query._id;
 
 
         // paginación
@@ -34,6 +35,14 @@ router.get('/', async (req, res, next) => {
         if (tags) {
             filtro.tags = tags;
         }
+
+        if (venta) {
+            filtro.venta = venta;
+          }
+    
+          if (_id) {
+            filtro._id = _id;
+          }
 
 
         const productos = await Producto.lista(filtro, skip, limit, fields, sort);
@@ -92,6 +101,19 @@ router.post ('/', async (req, res, next) => {
     } catch (error) {
         next(error);
     }
-})
+});
+
+router.delete('/:id', async (req, res, next) => {
+    try {
+      const _id = req.params.id;
+  
+      await Producto.deleteOne({ _id: _id });
+  
+      res.json();
+  
+    } catch (error) {
+      next(error);
+    }
+  });
 
 module.exports = router;

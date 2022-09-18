@@ -6,7 +6,10 @@ body {
   font: 16px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 main {
-  display: flex;
+  display: grid;
+  grid-template-columns: 250px 250px 250px 250px 250px 250px;
+  /* grid-template-rows: 250px 250px 250px 250px; */
+  position:relative;
   justify-content: space-between;
   align-items: center;
   

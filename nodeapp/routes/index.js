@@ -15,6 +15,7 @@ router.get('/', async (req, res, next) => {
       const name = req.query.name;
       const tags = req.query.tags;
       const venta = req.query.venta;
+      const _id = req.query._id;
 
 
       // paginación
@@ -39,6 +40,10 @@ router.get('/', async (req, res, next) => {
 
       if (venta) {
         filtro.venta = venta;
+      }
+
+      if (_id) {
+        filtro._id = _id;
       }
 
 
