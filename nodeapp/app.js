@@ -4,9 +4,11 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-const basicAuth = require ('./lib/basicAuth')
+const basicAuth = require ('./lib/basicAuth');
 
-var indexRouter = require('./routes/index');
+const i18n =require('./lib/i18nConfigure');
+
+
 
 
 var app = express();
@@ -32,7 +34,17 @@ app.use(express.static(path.join(__dirname, 'public')));
  */
 app.use('/api/productos', basicAuth,require('./routes/api/productos'));
 
-app.use('/', indexRouter);
+// setup de i18n
+app.use(i18n.init);
+
+
+/**
+ * Rutas del Website
+*/
+
+app.use('/',            require('./routes/index'));
+app.use('/productos',   require('./routes/productos'));
+app.use('/change-locale', require('./routes/change-locale'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
