@@ -4,9 +4,17 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+const session = require('express-session');
+const MongoStore = require('connect-mongo');
+
 const basicAuth = require ('./lib/basicAuth');
+const sessionAuth = require('./lib/sesssionAuthMiddleware');
+const jwtAuthMiddleware = require('./lib/jwtAuthMiddleware');
 
 const i18n =require('./lib/i18nConfigure');
+const LoginController = require('./routes/loginController');
+// const PrivadoController = require('./routes/privadoController');
+const swaggerMiddleware = require('./lib/swaggerMiddleware');
 
 
 
@@ -28,15 +36,37 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+const loginController = new LoginController();
+
 
 /**
  * Ruta de la api
  */
 app.use('/api/productos', basicAuth,require('./routes/api/productos'));
 
+app.use('/api/login',   loginController.postJWT);
+
 // setup de i18n
 app.use(i18n.init);
 
+
+app.use(session({
+  name: 'nodeapp-session',
+  secret: '=i]-292<(!HU"g1};Z&:',
+  saveUninitialized: true,
+  resave: false,
+  cookie: {
+    maxAge: 1000 * 60 * 60 * 24 * 2 // expira a los 2 días de inactividad del usuario
+  },
+  // store: MongoStore.create({
+  //   mongoUrl: process.env.MONGODB_CONNECTION_STRING
+  // })
+}))
+
+app.use((req, res, next) => {
+  res.locals.session = req.session;
+  next();
+})
 
 /**
  * Rutas del Website
@@ -45,6 +75,11 @@ app.use(i18n.init);
 app.use('/',            require('./routes/index'));
 app.use('/productos',   require('./routes/productos'));
 app.use('/change-locale', require('./routes/change-locale'));
+
+app.use('/pedidos',  require('./routes/pedidos'));
+app.get('/login',    loginController.index);
+app.post('/login',   loginController.post);
+app.get('/logout',   loginController.logout);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

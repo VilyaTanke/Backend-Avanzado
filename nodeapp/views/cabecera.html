@@ -25,7 +25,20 @@
                 <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
                     <li class="nav-item"><a class="nav-link" href="./"><%=__('Inicio')%></a></li>
                     <li class="nav-item"><a class="nav-link" href="./productos"><%=__('Productos')%></a></li>
-                    <li class="nav-item"><a class="nav-link" href="./login"><%=__('Login')%></a></li>
+                    <!-- <li class="nav-item"><a class="nav-link" href="./login"><%=__('Login')%></a></li> -->
+                    <% if (!session.usuarioLogado) { %>
+                        <a href="/login" class="btn btn-primary rounded-pill px-3 mb-2 mb-lg-0">
+                            <span class="d-flex align-items-center">
+                                <span class="small"><%=__('Login')%></span>
+                            </span>
+                        </a>
+                    <% } else { %>
+                        <a href="/logout" class="btn btn-primary rounded-pill px-3 mb-2 mb-lg-0">
+                            <span class="d-flex align-items-center">
+                                <span class="small"><%=__('Logout')%></span>
+                            </span>
+                        </a>
+                    <% } %>
                     
                 </ul>
                 <div class="lenguageclass">
@@ -33,6 +46,8 @@
                     <%  getLocales().forEach(locale => { %> 
                       <a href="/change-locale/<%=locale%>" class="btn-lenguage-btn"><%=locale%> <i class="bi bi-flag"></i></a>&nbsp;
                     <% }) %>
+
+                    
                   </div>
             </div>
         </div>

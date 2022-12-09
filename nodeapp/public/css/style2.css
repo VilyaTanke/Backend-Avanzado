@@ -72,4 +72,7 @@ button:hover{
   font-weight: lighter;
 }
 
+.form-control {
+  width: 25%;
+}
 

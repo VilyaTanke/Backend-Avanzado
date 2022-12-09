@@ -7,6 +7,7 @@ const connection = require('./lib/connectMongoose');
 
 //cargar los modelos
 const Producto = require('./models/Producto');
+const { Usuario } = require('./models');
 
 async function main () {
 
@@ -17,10 +18,27 @@ async function main () {
 
     // cargando colección de productos por defecto
     await initProductos();
+
+    // inicializamos la colección de usuarios
+    await initUsuarios();
+
     connection.close();
 }
 
 main().catch(err => console.log('error de tipo: ', err, ' al realizar la inicialización'));
+
+async function initUsuarios() {
+    // borrar todos los documentos de usuario
+    const deleted = await Usuario.deleteMany();
+    console.log(`Eliminados ${deleted.deletedCount} usuarios.`);
+  
+    // crear usuarios iniciales
+    const inserted = await Usuario.insertMany([
+      { email: 'admin@example.com', password: await Usuario.hashPassword('1234') },
+      { email: 'user1@example.com', password: await Usuario.hashPassword('1234') },
+    ]);
+    console.log(`Creados ${inserted.length} usuarios.`);
+  }
 
 async function initProductos() {
     // primero borraremos la DB existente

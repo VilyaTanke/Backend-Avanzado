@@ -36,7 +36,7 @@ class LoginController {
       usuario.enviarEmail('Bienvenido', 'Bienvenido a NodeApp');
 
       // --> redirigir a la zona privada
-      res.redirect('/privado');
+      res.redirect('/productos');
     } catch(err) {
       next(err);
     }

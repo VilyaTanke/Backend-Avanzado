@@ -7,8 +7,11 @@
     "dev": "cross-env DEBUG=nodeapp:* nodemon ./bin/WWW"
   },
   "dependencies": {
+    "@apidevtools/swagger-express-middleware": "^4.0.2",
     "amqplib": "^0.10.3",
+    "auth-middleware-jwt": "^1.0.17",
     "bcrypt": "^5.1.0",
+    "connect-mongo": "^4.6.0",
     "cookie-parser": "~1.4.4",
     "cote": "^1.0.3",
     "cross-env": "^7.0.3",
@@ -21,12 +24,15 @@
     "form-data": "^4.0.0",
     "http-errors": "~1.6.3",
     "i18n": "^0.15.1",
+    "jsonwebtoken": "^8.5.1",
     "module_name": "^1.0.0",
     "mongoose": "^6.8.0",
     "morgan": "~1.9.1",
     "ngrok": "^4.3.3",
     "nodemailer": "^6.8.0",
-    "socket.io": "^4.5.4"
+    "socket.io": "^4.5.4",
+    "swagger-jsdoc": "^6.2.5",
+    "swagger-ui-express": "^4.6.0"
   },
   "main": "app.js",
   "keywords": [],

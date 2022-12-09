@@ -6,7 +6,7 @@ const swaggerUI = require('swagger-ui-express');
 const options = {
   swaggerDefinition: {
     info: {
-      title: 'NodeApp API',
+      title: 'NodePop API',
       version: '0.1',
       description: 'API de agentes'
     }

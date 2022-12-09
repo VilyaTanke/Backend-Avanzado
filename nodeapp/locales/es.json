@@ -7,5 +7,12 @@
 	"O.O": "O.O",
 	"Login": "Login",
 	"lenguage": "lenguage",
-	"lenguage ---->": "lenguage ---->"
+	"lenguage ---->": "lenguage ---->",
+	"Dirección de Email": "Dirección de Email",
+	"No compartir sus datos de usuario": "No compartir sus datos de usuario",
+	"contraseña": "contraseña",
+	"Confirmar": "Confirmar",
+	"Invalid credentials": "Invalid credentials",
+	"Features": "Features",
+	"Logout": "Logout"
 }
