@@ -53,9 +53,7 @@ router.get('/', async (req, res, next) => {
       const ahora = new Date();
       res.render('index', { 
         title: 'Nodepop',
-        diaActual: ahora.getDate(),
-        mesActual: ahora.getMonth(),
-        annoActual: ahora.getFullYear(),
+        fechaActual: ahora.toLocaleDateString(),
         productos: productos
       })
 

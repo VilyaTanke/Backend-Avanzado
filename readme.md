@@ -35,6 +35,12 @@ instalar correctamente los paquetes lo puede hacer con:
 npm install
 ````
 
+Antes de iniciar la app, se recomienda inicializar la base de datos con:
+
+````
+node initDB.js
+````
+
 finalmente para inicializar la app usaremos:
 
 ````
