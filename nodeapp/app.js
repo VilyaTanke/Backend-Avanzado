@@ -8,13 +8,17 @@ const basicAuth = require ('./lib/basicAuth')
 
 var indexRouter = require('./routes/index');
 
-const mongoose = require('./lib/connectMongoose.js');
 
 var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
+app.set('view engine', 'html'); //usa un motor de vistas custom, llamado 'HTML'
+app.engine('html', require('ejs').__express) // ese motor usa ejs
+
+
+require('./lib/connectMongoose.js');
+
 
 app.use(logger('dev'));
 app.use(express.json());
