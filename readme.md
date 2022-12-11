@@ -9,7 +9,7 @@
 [![GitHub version](https://badge.fury.io/gh/VilyaTanke%2FPractica-HTML-CSS.svg)](https://badge.fury.io/gh/VilyaTanke%2FPractica-HTML-CSS)    [![HTML-dev](https://img.shields.io/badge/EJS-%3C-------------blue)](https://badge.fury.io/gh/VilyaTanke%2FPractica-HTML-CSS) [![HTML-dev](https://img.shields.io/badge/~~~~%3E-CSS-red)](https://badge.fury.io/gh/VilyaTanke%2FPractica-HTML-CSS)
  [![HTML-dev](https://img.shields.io/badge/~~~~~~>-NodeJS-orange)](https://badge.fury.io/gh/VilyaTanke%2FPractica-HTML-CSS) [![HTML-dev](https://img.shields.io/badge/~~~~%3E-JavaScript-yellow)](https://img.shields.io/badge/~~~~%3E-JavaScript-yellow)
 
-Bienvenido, en adelante encontrara las instrucciones mediante las cuales podra hacer el uso correcto de la api Productos que se utilizara para organizar y dar mantenimiento a la base de datos de la pagina de su negocio.
+Bienvenido, en adelante encontrara las instrucciones mediante las cuales podra hacer el uso correcto de la api Productos y que ademas vamos a poder mostrarle mediante una plantilla HTML sencilla.
 
 debe tener en cuenta que para el correcto uso de esta API debera tener instalado Mongodb ![HTML-dev](https://img.shields.io/badge/~~>-MongoDB-orange) para el manejo de la base de datos, nodejs [![npm version](https://badge.fury.io/js/graphql.svg)](https://badge.fury.io/js/graphql) para el manejo de todos los paquetes de trabajo.
 
@@ -20,7 +20,7 @@ despues de clonar el repositorio de la API, que podra hacer a través de git Bas
 para git bash puede usar;
 
 ````
-git clone https://github.com/VilyaTanke/API-productos-nodemon.git
+git clone https://github.com/VilyaTanke/Backend-Avanzado.git
 ````
 
 luego debera hacer la instalación de Express JS usando:
@@ -40,6 +40,8 @@ Antes de iniciar la app, se recomienda inicializar la base de datos con:
 ````
 node initDB.js
 ````
+("Debe tener en cuenta que para hacer la conexión a la base de datos sin problema, debe crear un fichero .env en la carpeta raiz de la app utilizando las variables de entorno proporcionadas en el fichero .env.example")
+____
 
 finalmente para inicializar la app usaremos:
 
@@ -54,7 +56,7 @@ si todo ha ido correctamente debera aparecer la pagina inicial de nuestra app qu
 
 ![home page](./nodeapp/public/images/Screenshot_1.jpg)
 
-### en la pagina de productos se veran los productos en formato Json:
+### en la pagina de productos se vera de la siguiente forma:
 
 ![Pagina de productos](./nodeapp/public/images/Screenshot_2.jpg)
 
