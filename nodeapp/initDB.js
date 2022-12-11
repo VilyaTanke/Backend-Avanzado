@@ -50,7 +50,10 @@ async function initProductos() {
         { name: 'Bicicleta', venta: true, precio: 230.15, foto: './images/BicicletaElectrica.jpg',  tags: ['lifestyle', 'motor']},
         { name: 'iphone 12 pro max', venta: false, precio: 800, foto: './images/iphone12.jpg', tags: ['lifestyle', 'mobile'] },
         { name: 'Asus Rog Strix', venta: true, precio: 950, foto: './images/AsusROG.jpg', tags: ['work', 'lifestyle', 'mobile'] },
-        { name: 'patinete XIAOMI', venta: true, precio: 300, foto: './images/Patinetexiaomi.jpg', tags: ['lifestyle', 'motor'] }
+        { name: 'patinete XIAOMI', venta: true, precio: 300, foto: './images/Patinetexiaomi.jpg', tags: ['lifestyle', 'motor'] },
+        { name: 'Maquina Alfa', venta: true, precio: 400, foto: './images/alfa-2160.jpg',  tags: ['lifestyle', 'work']},
+        { name: 'Monitor Gaming', venta: false, precio:150, foto: './images/monitor.jpg', tags: ['lifestyle', 'work'] },
+        { name: 'guitarra Les Paul', venta: true, precio: 900, foto: './images/Lesp.jpg', tags: ['work', 'lifestyle', 'mobile'] }
     ]);
     console.log(`Creados ${inserted.length} Pproductos para nuestra base de datos`);
 }

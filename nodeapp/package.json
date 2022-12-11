@@ -11,6 +11,7 @@
     "amqplib": "^0.10.3",
     "auth-middleware-jwt": "^1.0.17",
     "bcrypt": "^5.1.0",
+    "bootstrap-icons": "^1.10.2",
     "connect-mongo": "^4.6.0",
     "cookie-parser": "~1.4.4",
     "cote": "^1.0.3",

@@ -11,15 +11,15 @@
           <img src="<%= producto.foto %>" alt="<%=producto.name%>">
           <ul>
             <li class ="TituloProducto"><%= producto.name %> </li>
-            <li>Precio: <%= producto.precio %> € </li>
+            <li><%=__('Precio')%>: <%= producto.precio %> € </li>
             <li><%= producto.tags %> </li>
             <li class="estado"> 
               <% if (producto.venta) { %>
-                <p>Venta</p>
-                <button>Comprar</button>
+                <p><%=__('Venta')%></p>
+                <button class="btn-lo-pd"><%=__('Comprar')%></button>
               <% } else { %>
-                <p>Compra</p>
-                <button>Vender</button>
+                <p><%=__('Compra')%></p>
+                <button class="btn-lo-pd"><%=__('Vender')%></button>
               <% } %>
             </li>
           </ul>

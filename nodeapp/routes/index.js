@@ -9,7 +9,7 @@ const Producto = require('../models/Producto');
 router.get('/', async (req, res, next) => {
 
   try {
-      res.locals.bienvenido = 'Bienvenido a Nodepop';
+      res.locals.bienvenido = res.__('Bienvenido a Nodepop');
       const ahora = new Date();
       res.render('index', { 
         title: 'Nodepop',

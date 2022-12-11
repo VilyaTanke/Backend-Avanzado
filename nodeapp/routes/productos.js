@@ -48,7 +48,7 @@ router.get('/', async (req, res, next) => {
 
       const productos = await Producto.lista(filtro, skip, limit, fields, sort);
 
-      res.locals.bienvenido = 'Bienvenido a Nodepop';
+      
       const ahora = new Date();
       res.render('productos', { 
         title: 'Nodepop',

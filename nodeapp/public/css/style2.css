@@ -7,12 +7,11 @@ body {
 }
 .containerProduct {
   display: grid;
-  grid-template-columns: 250px 250px 250px 250px 250px 250px;
-  /* grid-template-rows: 250px 250px 250px 250px; */
-  position:relative;
+  grid-template-columns: 300px 150px 300px 150px 300px 150px 300px 150px;
+  grid-template-rows: 250px 250px 250px 250px;
+  position:absolute;
   justify-content: space-between;
   align-items: center;
-  
 }
 
 a {
@@ -21,6 +20,9 @@ a {
 
 img {
   width: 200px;
+  margin: 20px;
+  margin-left: 45px;
+  border-radius: 25px;
 }
 ul {
   list-style-type: none;
@@ -36,7 +38,7 @@ ul {
   color: rgb(20, 114, 20);
 }
 
-button {
+.btn-lo-pd {
   background-color: rgb(255, 230, 0);
   color: rgb(63, 63, 62);
   font-weight: bold;
@@ -46,9 +48,9 @@ button {
   border: none;
   cursor: pointer;
   box-shadow: 0px 0px 5px rgb(0, 0, 0);
-
+  text-decoration: none;
 }
-button:hover{
+.btn-lo-pd:hover{
   background-color: rgb(255, 230, 0);
   color: black;
   transition: background-color .3s linear;
@@ -66,6 +68,7 @@ button:hover{
 }
 
 .tituloLenguage{
+  margin-left: 12px;
   display: block;
   justify-content: center;
   font-size: 15px;
@@ -74,5 +77,9 @@ button:hover{
 
 .form-control {
   width: 25%;
+}
+
+.lenguageclass {
+  margin-left: 20px;
 }
 
