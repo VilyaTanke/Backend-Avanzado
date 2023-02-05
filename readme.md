@@ -4,7 +4,10 @@
 
 **`Angel Magallanes`**
 
+# PRACTICA - SERVIDORES - links a la practica:
 
+   --- ip React     -> http://100.25.221.1
+   --- dns Backend  -> http://ec2-100-25-221-1.compute-1.amazonaws.com
 
 [![GitHub version](https://badge.fury.io/gh/VilyaTanke%2FPractica-HTML-CSS.svg)](https://badge.fury.io/gh/VilyaTanke%2FPractica-HTML-CSS)    [![HTML-dev](https://img.shields.io/badge/EJS-%3C-------------blue)](https://badge.fury.io/gh/VilyaTanke%2FPractica-HTML-CSS) [![HTML-dev](https://img.shields.io/badge/~~~~%3E-CSS-red)](https://badge.fury.io/gh/VilyaTanke%2FPractica-HTML-CSS)
  [![HTML-dev](https://img.shields.io/badge/~~~~~~>-NodeJS-orange)](https://badge.fury.io/gh/VilyaTanke%2FPractica-HTML-CSS) [![HTML-dev](https://img.shields.io/badge/~~~~%3E-JavaScript-yellow)](https://img.shields.io/badge/~~~~%3E-JavaScript-yellow)
